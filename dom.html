@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P id="title" class="ptage">hello everyone </P><ul id="ullist" class="unorderlist">
+        <li>hello how are you</li>
+        <li>hello how are you</li>
+        <li>hello how are you</li>
+    </ul>
+    <script>
+        const p = document.getElementById('title');
+        const ul  = document.querySelector('ul');
+        const li  = document.querySelector('li');
+        const li2  = document.querySelectorAll('li');
+        p.innerHTML="i  wnt becm mern stcak devloper";
+        ul.style.background="green";
+        li.style.background="white";
+        li2[2].style.fontSize="50px";
+
+        const one=p.getAttribute('id');
+        const two=p.getAttribute('class');
+        console.log(one);
+        console.log(two);
+        
+     
+
+
+    </script>
+</body>
+</html>
