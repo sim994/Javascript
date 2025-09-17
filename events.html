@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript events</title>
+</head>
+
+<body>
+    <input type="submit" value="event1" id="e1">
+    <input type="submit" value="event2" id="e2">
+    <input type="submit" value="event3" id="e3">
+    <input type="submit" value="event4" id="e4">
+    <input type="submit" value="event5" id="e5">
+    <input type="submit" value="event6" id="e6">
+    <script>
+        // events in javascript
+        const one = document.getElementById('e1')
+        const two = document.getElementById('e2')
+        const three = document.getElementById('e3')
+        const four = document.getElementById('e4')
+        const five = document.getElementById('e5')
+        const six = document.getElementById('e6')
+
+        one.addEventListener('click', () => {
+            alert("Event 1 clicked");
+        })
+        two.addEventListener('dblclick', () => {
+            alert("Event 2 clicked");
+        })
+        three.addEventListener('mouseenter', () => {
+            alert("Event 3 clicked");
+        })
+        // event bubbling  = bottom to top 
+        // capturing bottom to top 
+        four.addEventListener('mouseleave', (e) => {
+            alert("Event 4 clicked");
+            e.preventDefault()
+            // console.log(e.target)
+            let remove = e.target
+            remove.remove()
+
+        }, true)
+            // event propgenction inside outside  is called bubbling
+            // and caapturing mall thier flow outside to inside
+            
+    </script>
+</body>
+
+</html>
