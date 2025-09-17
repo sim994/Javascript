@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const a = [1,2,3,4,,6,7,8,9]
+
+        // const store = a.filter((num) => num > 8 )
+        
+        
+        // const store = a.filter((num) => {
+            //     return num > 8
+            // } )
+            
+            // const store = a.filter((num) => num>4)
+
+           const student=[
+           { id:1,
+            name:'hiren',
+            gender:'male',},
+           { id:2,
+            name:'rajesh',
+            gender:'male',},
+           { id:3,
+            name:'hetvi',
+            gender:'female',},
+           { id:4,
+            name:'urvish',
+            gender:'female',}
+        ]
+
+        //    const method = student.filter( (data) => data.name === 'urvish')
+           const method = student.filter( (data) => data.id > 2)
+
+           console.log(method);
+           const lop = [{
+            id: 1,
+            name: 'hitesh',
+            marks: 90,
+            gender:'male'
+        }, {
+            id: 2,
+            name: 'janvi',
+            marks: 98,
+            gender:'female'
+        }, {
+            id: 3,
+            name: 'jainam',
+            marks: 99,
+            gender:'male'
+        }, {
+            id: 4,
+            name: 'priyanka',
+            marks:70,
+            gender:'female'
+        }]
+
+        const hightmarks = lop.filter((e)=> e.marks < 80)
+        const showgender = lop.filter((e)=> e.gender == 'female' && e.marks <80)
+
+        const usingmaps = lop.map((id)=> id.id > 3)
+        console.log(hightmarks)
+        console.log(showgender)
+        console.log(usingmaps)
+    </script>               
+</body>
+</html>
