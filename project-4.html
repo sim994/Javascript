@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs Numbers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="number" id="inputs" class="getnum">
+    <input type="submit" value="Enter" class="enter">
+    <p class="tage"></p>
+    <script>
+        const inputs = document.querySelector('.getnum')
+        const submit = document.querySelector('.enter')
+        const tage = document.querySelector('.tage')
+
+        
+        const playgame = true
+        const store = []
+        const owels = ['a','e','i','o','u']
+        
+        if (playgame) {
+            submit.addEventListener('click', (e) => {
+                e.preventDefault()
+                const check = parseInt(inputs.value) 
+                checkinput(check)
+                showvalue(check)
+            })
+        }
+        function checkinput(check) {
+            if (isNaN(check)) {
+                alert('please enter number')
+            }else if(check >= 100 ||  check <= 0){
+                alert('Enter Between 0 to 99 number')
+            }else if(check == owels){
+                alert('please enter the number')
+            }
+           
+            
+        }
+       
+        function showvalue(check) {
+            inputs.value= ''
+            tage.innerHTML += `${check}`
+        }
+    </script>
+</body>
+
+</html>
