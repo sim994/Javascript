@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIme Watch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-color: skyblue;
+        }
+
+        .clock-block {
+            height: 200px;
+            width: 50%;
+            background-color: rgba(135, 207, 235, 0.672);
+            box-shadow: 6px 6px 15px white, -6px -6px 15px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-radius: 30px;
+        }
+
+        .hour-block {
+            height: 145px;
+            width: 130px;
+            background-color: rgb(228, 240, 240, 0.5);
+            font-size: 120px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .minuts-block {
+            height: 145px;
+            width: 130px;
+            background-color: rgb(228, 240, 240, 0.5);
+            font-size: 120px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .second-block {
+            height: 145px;
+            width: 130px;
+            background-color: rgb(228, 240, 240, 0.5);
+            font-size: 120px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        p {
+            font-size: 140px;
+        }
+
+        .buttons-section {
+            height: 20vh;
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .start {
+            height: 6vh;
+            width: 8vw;
+            background-color: rgba(135, 207, 235, 0.672);
+            box-shadow: 4px 4px 10px white, -4px -4px 10px black;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .stop {
+            height: 6vh;
+            width: 8vw;
+            background-color: rgba(135, 207, 235, 0.672);
+            box-shadow: 4px 4px 10px white, -4px -4px 10px black;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .cencel {
+            height: 6vh;
+            width: 8vw;
+            background-color: rgba(135, 207, 235, 0.672);
+            box-shadow: 4px 4px 10px white, -4px -4px 10px black;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock-block">
+        <div class="hour-block"></div>
+        <p>:</p>
+        <div class="minuts-block"></div>
+        <p>:</p>
+        <div class="second-block"></div>
+    </div>
+    <div class="buttons-section">
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+        <button class="cencel">Refresh</button>
+    </div>
+    <script>
+        const hr = document.querySelector('.hour-block')
+        const mi = document.querySelector('.minuts-block')
+        const sec = document.querySelector('.second-block')
+
+        hr.innerHTML = '00'
+        mi.innerHTML = '00'
+        sec.innerHTML = '00'
+
+        const start = document.querySelector('.start')
+        const stop = document.querySelector('.stop')
+        const cencel = document.querySelector('.cencel')
+        
+            start.addEventListener('click',()=>{
+                let count = 0 
+                let count2 = 0
+                let count3 = 0
+                setInterval(() => {
+                    count+=1
+                     sec.innerHTML = count
+                     if(count == 60)
+                     {
+                        count = 0
+                        sec.innerHTML = count+=1
+                        mi.innerHTML = count2+=1
+                    }
+                    
+                    if(count2 == 60){
+                        
+                        count2 = 0
+                        sec.innerHTML = count2+=1
+                        hr.innerHTML = count3+=1
+                     }
+                }, 1000);
+
+            })
+           
+    </script>
+</body>
+
+</html>
