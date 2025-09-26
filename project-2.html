@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time coverter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: skyblue;
+        }
+
+        .form {
+            height: 380px;
+            width: 300px;
+            background-color: rgba(135, 207, 235, 0.896);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-radius: 30px;
+            box-shadow: 5px 5px 12px white, -5px -5px 13px black;
+        }
+
+        .convert {
+            height: 40px;
+            width: 130px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .input-time {
+            height: 35px;
+            width: 70%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .hours {
+            height: 35px;
+            width: 70%;
+            border-radius: 10px;
+            border: none;
+        }
+        .hours::before{
+            content: "Hours";
+            height: 10px;
+            width: 30px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+        }
+
+        .minuts {
+            height: 35px;
+            width: 70%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .seconds {
+            height: 35px;
+            width: 70%;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="form">
+        <input type="text" name="time" id="time" class="input-time" placeholder="Enter your hour ">
+        <input type="submit" value="covert to " class="convert" id="convert">
+        <input type="text" name="minuts" id="minuts" class="minuts">
+        <input type="text" name="seconds" id="seconds" class="seconds">
+    </form>
+    <script>
+        const form = document.querySelector('.form')
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const input = parseInt(document.querySelector('#time').value)
+
+            let minuts = input * 60
+            document.querySelector('#minuts').value = minuts
+            
+            let sec = minuts * 60 
+            document.querySelector('#seconds').value = sec
+
+        })
+    </script>
+</body>
+
+</html>
