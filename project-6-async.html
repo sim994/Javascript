@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: font;
+            src: url(AsianNinja-jED8y.otf);
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: brown;
+            font-family:font;
+            font-weight:lighter;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Press Any Area of Screen</h1>
+    <h3 class="aboutthekey"></h3>
+    <script>
+        const sc = document.querySelector('body')
+        const tb = document.querySelector('.aboutthekey')
+        
+        sc.addEventListener('keydown',(e)=>{
+            e.preventDefault()
+            console.log(`This is key name ${e.key} and This is keycode ${e.keyCode}`);
+        });
+    </script>
+</body>
+</html>
