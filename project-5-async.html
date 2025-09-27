@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval and SetTimeout</title>
+</head>
+
+<body>
+    <h6 class="header">Let's change Background color </h6>
+    <button class="start">Start</button>
+    <button class="stop">Stop</button>
+
+    <script>
+        const srt = document.querySelector('.start')
+        const spt = document.querySelector('.stop')
+        const color = document.querySelector('body')
+        
+
+
+        const rd = function(){
+            const hex= '0123456789ABCDEF'
+            let color = '#'
+            for (let index = 0; index < 6; index++) {
+                color+=hex[Math.floor(Math.random()*16)]
+            }
+            return color
+        }
+        let change;
+        const start = function(){
+            
+            function changecolor(){
+                color.style.background = rd()
+            }
+             change = setInterval(changecolor,1000)
+        };
+
+        const stop = function(){
+            clearInterval(change)
+        }
+        srt.addEventListener('click',start)
+        spt.addEventListener('click',stop)
+
+
+
+    </script>
+</body>
+
+</html>
