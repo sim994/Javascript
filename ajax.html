@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="click" onclick="clicked()">click</button>
+    <p id="message">button has not click</p>
+</body>
+
+</html>
+<script>
+    //ready state
+    //0 -  request not initialized
+    //1- server connecion established
+    //2- request received
+    //3-processing request
+    //4-request finished and response is ready
+
+    // server are received responseText or responseXML 
+    //status
+    //200 - ok
+    //403 - forbidden
+    //404 - not found
+
+    function clicked() {
+
+        var xh = new XMLHttpRequest();
+
+        xh.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("message").innerHTML = this.responseText;
+            }
+        };
+
+        xh.open('GET', "m.txt", true);
+
+        xh.send();
+    }
+
+
+</script>
