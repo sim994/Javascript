@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // spred operator are used to stop the copy same value 
+        let arr1 = [10,20,30];
+        let arr2 = [40,50];
+
+        arr2.push(60);
+        document.write(...arr2 + "<br>");
+        //here we used the spred operator and print the comman values
+        document.write(...arr1,...arr2);
+
+    </script>
+
+</body>
+</html>
